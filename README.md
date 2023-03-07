@@ -33,17 +33,17 @@ spring.profiles.active=local
 ``
 
 ## Run the Application With Docker
-Start in detached mode
+Start in detached mode:
 ```
 docker-compose up -d
 ```
 
-Follow the docker log
+Follow the application log:
 ```
 docker logs -f recipes_api_service_1
 ```
 
-Stop
+Stop:
 ```
 docker-compose down
 ```
@@ -54,6 +54,6 @@ Swagger UI is accessible at http://localhost:9090/swagger-ui/index.html#/
 ## Health Check and Metrics
 Application uses Spring actuator for health check and metrics.
 
-metrics: http://localhost:9091/actuator/metrics
+Metrics: http://localhost:9091/actuator/metrics
 
-health: http://localhost:9091/actuator/health
+Health: http://localhost:9091/actuator/health

@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  api_service:
+    build: .
+    restart: always
+    volumes:
+    - ./:/main-app
+    ports:
+      - 9090:9090
+      - 9091:9091
+    depends_on:
+      - mysql_db
+  mysql_db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: abn
+      MYSQL_USER: abn
+      MYSQL_PASSWORD: 1234
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    ports:
+      - 3306:3306
+volumes:
+  db:
